@@ -1,7 +1,7 @@
 name: Exercise 1
 on: push
 jobs:
-  demploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
