@@ -1,0 +1,32 @@
+name: Exercise 1
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Get Code
+      uses: actions/checkout@v3
+      -name: Install Depenedecies
+      run: npm ci
+      -name: lint
+      run: npm run lint
+  tets:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      -name: Get Code
+      uses: actions/checkout@v3
+      -name: Install Depenedecies
+      -name: test
+      run: npm run test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      -name: Get Code
+      uses: actions/checkout@v3
+      -name: Install Depenedecies
+      -name: build
+      run: nmp run build
+      -name: Deploy
+      run: echo "Deploying ..."
