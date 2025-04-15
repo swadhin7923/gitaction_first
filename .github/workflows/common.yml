@@ -1,0 +1,40 @@
+name: Autosar Workflow
+on:
+  push:
+    branches:
+      - main
+  pull request:
+    branches:
+      - main
+Jobs:
+  Dummy Rte Generation: 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout Code
+      uses: actions/checkout(v3
+      - name: Run Dummy RTE Generation
+      run: echo "Running Dummy RTE Generation process..."
+  ACG Autosar:
+    needs: Dummy_Rte_Generation 
+    runs-on: ubuntu-latest steps:
+      - name: Checkout Code
+      uses: actions/checkout@v3
+      - name: Run ACG Autosar Process
+      run: echo "Running ACG Autosar process..."
+  ELE_Generation:
+  needs:
+    - Dummy_Rte_Generation
+    - ACG_Autosar + Optional dependency 
+  runs-on: ubuntu-latest steps:
+    - name: Checkout Code
+      uses: actions/checkoutv3
+    - name: Check Condition for ACG_Autosar Dependency 1d: check-condition
+      run: |
+      + Replace with your actual condition logic
+      CONDITION MET=true
+      echo "condition met=$CONDITION_MET" > $GITHUB ENV
+      - name: Conditionally Skip ACG Autosar Dependency
+      1f: env, condition met != true' run: 1
+      echo "Skipping ACG_Autosar dependency..."
+      - name: Run ELE Generation
+      run: echo "Running ELF Generation process..."
