@@ -1,0 +1,6 @@
+name: SWC Workflow
+on:
+  workflow_dispatch:
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/common.yml
