@@ -22,6 +22,7 @@ jobs:
   ELE_Generation:
     needs:
       - Dummy_Rte_Generation
+      - ACG_Autosar
     runs-on: ubuntu-latest 
     steps:
     - name: Checkout Code
