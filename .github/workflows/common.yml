@@ -26,14 +26,3 @@ jobs:
     steps:
     - name: Checkout Code
       run: echo "Checking out repo"
-    - name: Check Condition for ACG_Autosar Dependency 
-      id: check-condition
-      run: |
-        CONDITION_MET=true
-        echo "condition met=$CONDITION_MET" > $GITHUB ENV
-        - name: Conditionally Skip ACG Autosar Dependency
-        1f: env, condition met != true' 
-        run: 1
-        echo "Skipping ACG_Autosar dependency..."
-        - name: Run ELE Generation
-        run: echo "Running ELF Generation process..."
