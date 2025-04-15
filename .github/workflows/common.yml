@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Run Dummy RTE Generation
         run: echo "Running Dummy RTE Generation process..."
-  Fota_init_Code_Generation:
+  ACG_Autosar:
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout Code
@@ -19,7 +19,7 @@ jobs:
   ELF_Generation:
     needs:
       - Dummy_Rte_Generation
-      - Fota_init_Code_Generation
+      - ACG_Autosar
     runs-on: ubuntu-latest 
     steps:
     - name: Checkout Code
